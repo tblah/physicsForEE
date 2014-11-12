@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{Physics For Electronic Engineers Revision Notes}
+\author{Tom Eccles}
+
+\begin{document}
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+\chapter{Electromagnetism}
+
+\chapter{Devices}
+\section{Resistors}
+\subsection{Basics}
+Resistance is defined using Ohm's Law:
+\[R=\frac{V}{i}\] Note that the resistance is a property of a material and so does not depend upon potential difference and current. The resistance of a device can be calculated by the following:
+\[R=\rho\frac{l}{S}\] Where $\rho$ is the resistivity of the material, $l$ is the length and $S$ is it's surface area.
+
+Most real components have resistance however this is often unintended and in simple models circuits are modelled with only resistance in intentionally placed resistors.
+
+The unit of resistance is the Ohm ($\Omega$). As can be seen from Ohm's Law, one $\Omega$ is equivalent to one $VA^{-1}$.
+
+\subsection{Derivation Of Ohm's Law}
+\subsubsection{Current and Current Density}
+Current is the rate of flow of charge:
+\[i=\frac{dq}{dt}\]
+
+Current density for constant current and area: 
+\[J = \frac{I}{A}\]
+
+Current density for variable current: 
+\[i = \int \vec{J} \cdot d\vec{A}\] 
+
+\subsubsection{Drift Velocity}
+For all electric fields:
+\[F = ma = qE\]
+\[\therefore a = \frac{eE}{m}\]
+
+However in materials with resistance (not superconductors) the acceleration is limited because the electrons collide with ions in the material. This scatters the electrons and stops them accelerating for too long.
+
+Therefore the drift velocity of electrons due to an electric field through a material should be calculated using a statistical average using the average time between collisions $\tau$:
+\[v_d = a\tau = \frac{eE\tau}{m}.\]
+
+The drift velocity is much less than the thermal/diffusion velocity. 
+
+\subsubsection{Using this to get current}
+Total mobile charge in material length $d$ with surface area $A$ and $n$ charges $e$ per unit volume:
+\[Q=neAd\]
+
+The time for this mobile charge to sweep past the measuring point (ignoring acceleration) is:
+\[t=\frac{d}{v_d}[\]
+\[\therefore I = \frac{Q}{t} = neAv_d\]
+
+\subsubsection{Ohm's Law (microscopic)}
+Using previous equations for $I$, $J$ and $v_d$:
+\[J = env_d=\frac{ne^2E}{m}\tau\]
+
+Another definition for current density (using conductivity $\sigma$):
+\[J=\sigma E\]
+\[\therefore \sigma = \frac{ne^2\tau}{m}\]
+
+Resistivity is the inverse of conductivity:
+\[\rho = \frac{1}{\sigma}\]
+
+From before:
+\[i=JA\]
+
+Assume uniform electric field:
+\[V=EL\]
+
+Using the 'resistivity equation':
+\[i=\frac{AV}{\rho L}\]
+\[\therefore R=\frac{V}{i}\]
+
+\subsubsection{What does this tell us?}
+In symmetric non-superconductors  $I \propto V$. Materials which obey this are called ohmic conductors.
+
+\section{Power}
+
+\chapter{Oscillations and Waves}
+
+\chapter{Batteries and Fuel Cell}
+
+\chapter{Appencices}
+\section{Distrubution and Licensing}
+This work is distrubuted under Creative Commons Attribution-ShareAlike 4.0
+International (see https://creativecommons.org/by-sa/4.0/).
+
+\end{document}
