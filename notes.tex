@@ -82,7 +82,54 @@ Using the 'resistivity equation':
 \subsubsection{What does this tell us?}
 In symmetric non-superconductors  $I \propto V$. Materials which obey this are called ohmic conductors.
 
-\section{Power}
+\subsubsection{Mobility}
+Mobility characterises how quickly electrons or holes move through a conductor when an electric field is applied. 
+
+Electron mobility $\mu$ is defined as
+\[\mu = \frac{ne^2\tau}{m} = \frac{\sigma}{ne}\]
+
+Which means it is the conductivity per unit charge.
+
+\subsection{Power}
+Power is defined as the rate of energy transfer:
+\[P_{tr} = \frac{dW}{dt} = \frac{dW}{dq}\frac{dq}{dt} = vi\].
+
+By substituting in from Ohm's Law we can see that:
+\[P_{loss} = i^2R = \frac{v^2}{R}\]
+
+Note that the $v$ in Ohm's Law is the potential across the resistor, not the potential of the resistor relative to an arbitrary ground. This is why very high voltages are used in power lines: $\Delta v << v$ (because $\Delta v$ and $v$ are measured using different reference points) and so this leads to very high efficiency compared to when higher currents and lower potentials are used.
+
+\subsubsection{Heat}
+Following on from the definition of power, the thermal energy released by the resistor in time $t = t_2 - t_1$ can be calculated by the following (thermodynamics states that all of the energy dissipated will eventually become heat):
+\[W=\int_{t_1}^{t_2} p(t) \: dt = \int_{t_1}^{t_2} v(t)i(t) \: dt\]
+
+Of-course, real materials have a limited amount of power which they can dissipate without becoming damaged. For resistors this is called the resistor power rating. Many resistors are typically rated at $1/10$, $1/8$ or $1/4$ Watts. Resistors with higher power ratings than this are called power resistors.
+
+For similar reasons, resistors also have temperature ratings which depend upon the power loads on the resistors.
+
+The resistance from the material will also change with temperature. This is described by the temperature co-efficient of resistance (TCR) which is expressed as the change in resistance (in parts per million) per degree Kelvin. This is not typically linear, instead being parabolic with temperature.
+
+Sometimes resistance can change with potential as well and so there is a voltage rating and coefficient analogous to those for temperature. The voltage rating can be calculated as follows:
+\[Rated Voltage(V)=\sqrt{Rated Power(W) \times Nominal Resistance Value(\Omega)}\]
+
+\subsection{Noise in a Resistor}
+In general thermal noise dominates at high frequencies and current noise at low frequencies.
+\subsubsection{Thermal Noise}
+Thermal noise is evenly distributed across all frequencies and is dependent only on the value of resistance and the resistor's temperature:
+\[S_T = 4kTR\]
+Where $k = 1.3807 \times 10^{-23} JK^{-1}$ (Boltzmann's constant). 
+
+\subsubsection{Current Noise}
+Current noise in a resistor does depend upon the material and the frequency:
+\[S_E = C \, \frac{U^2}{f}\] where $C$ is a constant depending upon the material of the resistor and $U$ is the potential drop across the resistor.
+This is often expressed in decibels:
+\[[NI]_{dB} = 20 \log \left( \frac{u}{U} \times 10^6 \right)\]
+
+\section{Capacitors}
+
+\section{Polarisation}
+
+\section{Electrets}
 
 \chapter{Oscillations and Waves}
 
