@@ -125,9 +125,35 @@ Current noise in a resistor does depend upon the material and the frequency:
 This is often expressed in decibels:
 \[[NI]_{dB} = 20 \log \left( \frac{u}{U} \times 10^6 \right)\]
 
-\section{Capacitors}
-
 \section{Polarisation}
+
+\section{Capacitors}
+A capacitor is a device which stores charge. It is made of two conductors separated by an insulator.
+
+The capacitance of a capacitor is defined as the ratio of charge to potential: however capacitance is a constant and is determined by neither charge nor potential.
+\[\frac{Q}{V}\]
+
+Instead the capacitance of a given capacitor depends upon its dimensions and the permittivity of it's dielectric.
+\[C=\varepsilon \varepsilon_0 \frac{S}{d}\]
+
+Where $\varepsilon_0 = 8.85 \times10^{-12} \: Fm^{-1}$ is the permittivity of a vacuum, $S$ is the surface area of the conducting plates and $d$ is their separation.
+
+\subsection{Energy}
+Remember from before that 
+\[V=\frac{dW}{dq}\]
+\[\therefore q=C\frac{dW}{dq}\]
+\[\int_0^Q q \, dq = C \int_0^Q dW\]
+\[\frac{1}{2} \, Q^2 = CW\]
+\[\therefore W=\frac{1}{2}CV^2=\frac{1}{2}QV\]
+
+\subsection{Imperfect Dielectrics and Complex Permittivity}
+In an ideal dielectric there is no energy loss however in real dielectrics defects and impurities lead to various charge carriers in dielectrics. Under the influence of an electric field, current flows through the dielectrics: causing it to act like a resistor. 
+
+Also, material's polarisation do not respond instantaneously to changes in electric field and so the response of a capacitor greatly depends upon the frequency applied to it. This introduces a phase difference to the response: motivating the use of complex numbers to model this behaviour.
+
+This real behaviour can be modelled by imagining a capacitor where the permittivity is a complex number: $\varepsilon^*$, which is called complex permittivity. Let $Re(\varepsilon^*)=\varepsilon'$ and $Im(\varepsilon^*)=\varepsilon''$. To model the $C \, F$ capacitor we will represent it as an ideal capacitor $C_p$ with capacitance $C_0 =\varepsilon'\varepsilon_0\frac{S}{d}$, connected in parallel across an ideal resistor $R_p$ with resistance $\varepsilon'' \, \Omega$.
+
+As the permittivity is a complex number, the current though the capacitor will also be complex. Therefore an Argand diagram can be drawn with current on the imaginary axis and potential on the real axis. The current response from the capacitor for different potentials for a given angular velocity $\omega$ can be plotted as s vector on the Argand diagram. The angle between the imaginary axis (current) and this vector is the phase shift described previously.
 
 \section{Electrets}
 
