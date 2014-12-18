@@ -38,6 +38,73 @@ This is very similar to Newton's law for gravitation:
 
 The total force on a particle is equal to the sum of all the forces from all other particles. \textit{Make sure you get the vector algebra correct when doing this.}
 
+\section{Electric Fields}
+Electric field is defined as the force per unit charge:
+\begin{equation*}
+	\vec{E} = \frac{\vec{F}}{q} = \frac{Q}{4\pi\varepsilon_0 \vec{r}^2}
+\end{equation*}
+
+The electric field is often drawn as arrows on a diagram (from the perspective of the force upon a small positive test charge).
+
+As with force, the total electric field equals the sum of all electric fields in a system (again, being careful with the vector algebra).
+
+\subsection{Example: Electric Field From a Charged Ring}
+Suppose there is a positively charged ring in the XY-plane, centred about the origin and with an average radius $R$ with a thickness far less than R. Assuming that the charge on the ring is far greater than $e$ (so that charge can be treated as continuous) the electric field at a point P distance $z$ along the Z-axis can be found by the following:
+
+As previously discussed, the total electric field is the sum of all of the fields from all of the charges and so:
+\begin{equation*}
+\vec{E_T} = \int_0^{E_T}\, dE
+\end{equation*}
+Where $dE$ is an infinitesimally small section of the ring. Considering the electric field in the Z direction, $dE$ will be
+\begin{eqnarray*}
+	dE_z = \frac{\delta Q}{4\pi\varepsilon_0(R^2+z^2)}\cdot\frac{z}{\sqrt{R^2+z^2}} = \frac{\delta Qz}{4\pi\varepsilon_0(R^2+z^2)^{\frac{3}{2}}} \\
+	\therefore E_z = \frac{Qz}{4\pi\varepsilon_0(R^2+z^2)^{\frac{3}{2}}}
+\end{eqnarray*}
+
+As point P is defined to be along the axis perpendicular to the ring's centre, the X and Y components of the field must cancel out due to symmetry. Therefore the whole field is:
+\begin{equation*}
+	E = \frac{Qz}{4\pi\varepsilon_0(R^2+z^2)^{\frac{3}{2}}}
+\end{equation*}
+
+\section{Electric Potential}
+\begin{itemize}
+	\item This is a scalar quantity and so is path independent
+	\item Potential is measured relative to the potential somewhere else
+	\item Often measured relative to the potential at $r=\infty$ because $V_\infty=0$
+	\item I find it useful to think of electric potential as the potential energy per unit charge
+\end{itemize}
+\begin{equation*}
+	V = - \int_i^f E(x)\delta x
+\end{equation*}
+
+\subsection{Example: Single Charge}
+The potential at distance $R$ from charge $Q$:
+\begin{equation*}
+	V = -\int_{\infty}^R\frac{Q}{4\pi\varepsilon_0r^2}dr = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{R} - \frac{1}{\infty}\right) = \frac{Q}{4\pi\varepsilon_0R}
+\end{equation*}
+Observe that the maths breaks down when very close to $R=0$. Fortunately real charged particles do have size (although it is incredibly small).
+
+\subsection{Electric Potential Energy}
+\begin{itemize}
+	\item Analogous to electric potential energy
+	\item Scalar - therefore path independent
+	\item $E_p = qV$
+\end{itemize}
+
+\subsection{Equipotential Lines}
+\begin{itemize}
+	\item Equipotential Lines are always perpendicular to field lines
+	\item These are like the height lines on a map.
+\end{itemize}
+
+\subsection{Spherical Conductor}
+Imagine a spherical conductor with charge evenly distributed across it:
+\begin{itemize}
+	\item There is no electric field inside the conductor because of the symmetry of the sphere: the super positions cancel out.
+	\item Therefore inside the sphere the electric potential is constant.
+	\item Newton's shell theorem\footnote{See https://en.wikipedia.org/wiki/Shell\_theorem} also tells us that from outside the shell we can treat the spherical conductor like a particle at the centre of the sphere.
+\end{itemize}
+
 \chapter{Devices}
 \section{Resistors}
 \subsection{Basics}
