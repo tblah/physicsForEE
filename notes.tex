@@ -105,6 +105,47 @@ Imagine a spherical conductor with charge evenly distributed across it:
 	\item Newton's shell theorem\footnote{See https://en.wikipedia.org/wiki/Shell\_theorem} also tells us that from outside the shell we can treat the spherical conductor like a particle at the centre of the sphere.
 \end{itemize}
 
+\section{Capacitors}
+\begin{itemize}
+	\item Made of two isolated conductors
+	\item Equal and opposite charges build up on the conductors
+	\item Therefore storing energy
+	\item The charge on the conductors is proportional to the potential between them. The constant of proportionality, $C$, is the capacitance of the system. This is measured in Frauds (F). 
+\end{itemize}
+\begin{equation*}
+	Q = CV
+\end{equation*}
+
+\subsection{Example: Spherical Capacitor}
+Imagine two conducting spheres with average radii $a$ and $b$ where $a < b$. The sphere with radius $a$ is inside the other sphere (aligned to it's centre). Between the spheres is a vacuum. The spheres hold an equal and opposite charge of $Q$.
+
+Considering the electric field in the space between ($a < r < b$) the two spheres:
+\begin{itemize}
+	\item There will be no electric field from the larger sphere as this space lies inside it (see previous section).
+	\item As this space lies outside the smaller sphere, it can be treated as a point charge.
+\end{itemize}
+
+Therefore the electric field in the area between the two conductors ($a < r < b$) is 
+\begin{equation*}
+	E = \frac{Q}{4\pi\varepsilon_0r^2}
+\end{equation*}
+
+One can now find the potential between the two conductors by integrating along the path of the radii:
+\begin{equation*}
+	V = -\int_b^a \frac{Q}{4\pi\varepsilon_0r^2} \: dr = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{a} - \frac{1}{b}\right)
+\end{equation*}
+
+Using this potential we can now find the capacitance using the proportionality of charge and potential:
+\begin{equation*}
+	C = \frac{Q}{V} = \frac{Q}{\frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{a} - \frac{1}{b}\right)} = \frac{4\pi\varepsilon_0ab}{b-a}
+\end{equation*}
+
+\subsection{Energy}
+Electric potential is defined as the energy per charge. Therefore:
+\begin{equation*}
+	U = \int_0^Q V \: dq = \int_0^Q \frac{q}{C} \: dq = \frac{Q^2}{2C} = \frac{CV^2}{2}
+\end{equation*}
+
 \chapter{Devices}
 \section{Resistors}
 \subsection{Basics}
