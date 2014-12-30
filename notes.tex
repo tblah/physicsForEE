@@ -11,7 +11,7 @@
 
 \begin{document}
 \maketitle
-\pagebreak
+This document is written primarily to provide revision material when used alongside the accompanying lecture slides. These slides are not publicly available but I hope this can still be useful to people other than students of electronics at Southampton. 
 \tableofcontents
 \pagebreak
 \chapter{Electromagnetism}
@@ -294,14 +294,44 @@ This real behaviour can be modelled by imagining a capacitor where the permittiv
 As the permittivity is a complex number, the current though the capacitor will also be complex. Therefore an Argand diagram can be drawn with current on the imaginary axis and potential on the real axis. The current response from the capacitor for different potentials for a given angular velocity $\omega$ can be plotted as s vector on the Argand diagram. The angle between the imaginary axis (current) and this vector is the phase shift described previously.
 
 \section{Electrets}
+Electrets are special dielectrics which (after being polarised by a magnetic field) retain their charge for much longer than the time period over which they are studied. Modern electrets are mostly made using polymers. 
+
+\subsection{Creating An Electret}
+\subsubsection{Thermal Forming Method}
+When materials are heated it is a lot easier for dipoles to rotate. At high temperatures some materials can become electrets just using electrodes. When the materials cool down the dipoles can no longer easily move and so the charge becomes semi-permanent. 
+
+\subsubsection{Corona Discharge Method}
+This uses a needle with a very high potential to ionise air. The material is connected to ground so that negative charges from the air move towards the material's surface. A wire mesh is used to control the potential at the material's surface. 
+
+\subsubsection{Liquid Contact Method}
+Here a wet electrode with a high potential is used to transfer charge to the grounded material.
+
+\subsubsection{Electron Beam Method}
+An electron gun, focusing magnetic field and vacuum chamber are used like in a CRT display to fire electrons at the material. These electrons will implant at a certain depth. 
+
+\subsection{Methods of Charge Measurement}
+\subsubsection{Capacitive Probe}
+\begin{itemize}
+	\item Popular for measuring surface charge and surface potential
+	\item Non-contact
+	\item Non-destructive
+	\item Uses $C = Q/V$
+	\item If the probe is a parallel plate then the material can be used as the other plate in a parallel plate capacitor
+\end{itemize}
+
+\subsubsection{Vibrating Capacitive Probe}
+This is a capacitive probe that is being vibrated. In this way a lot of measurements can be taken at different distances. This is done because measuring the change of the charge with time (current) at different distances can be easier.
+
+\subsection{Application Example: Condenser Microphone}
+Here a capacitor is created using an electret and an air gap as the dielectric. When the pressure wave (sound) occurs this changes the separation of the plates: changing the capacitance and producing an electric potential. 
 
 \chapter{Oscillations and Waves}
 
 \chapter{Batteries and Fuel Cell}
 
-\chapter{Appencices}
-\section{Distrubution and Licensing}
-This work is distrubuted under Creative Commons Attribution-ShareAlike 4.0
+\chapter{Appendices}
+\section{Distribution and Licensing}
+This work is distributed under Creative Commons Attribution-ShareAlike 4.0
 International (see https://creativecommons.org/by-sa/4.0/).
 
 \end{document}
