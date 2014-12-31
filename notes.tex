@@ -263,8 +263,6 @@ Current noise in a resistor does depend upon the material and the frequency:
 This is often expressed in decibels:
 \[[NI]_{dB} = 20 \log \left( \frac{u}{U} \times 10^6 \right)\]
 
-\section{Polarisation}
-
 \section{Capacitors}
 A capacitor is a device which stores charge. It is made of two conductors separated by an insulator.
 
@@ -293,8 +291,63 @@ This real behaviour can be modelled by imagining a capacitor where the permittiv
 
 As the permittivity is a complex number, the current though the capacitor will also be complex. Therefore an Argand diagram can be drawn with current on the imaginary axis and potential on the real axis. The current response from the capacitor for different potentials for a given angular velocity $\omega$ can be plotted as s vector on the Argand diagram. The angle between the imaginary axis (current) and this vector is the phase shift described previously.
 
+\section{Dielectrics}
+Consider putting an insulating material in the gap between the conductors in a capacitor. In an insulator electrons are bound to atoms and so cannot move through the material with the action of the electric field. However they can move slightly within the atom and so create a tiny dipole aligned against the electric field. Within the core of the material the atoms overlap so this has little effect however this does create a small charge $\pm q$ at the edges where the material boarders with the capacitor's conducting plates. 
+
+Let $\pm Q$ be the charge on the conducting plates, $d$ be the separation of the plates of the capacitor (the whole space is filled with the dielectric) and $E$ be the electric field in the dielectric. $S$ is the surface area of the conducting plates. 
+
+Note that $|Q| > |q|$ because the dielectric is an insulator. Also the surface charge of the dielectric will be opposite to the charge on the contacting plate.
+
+\begin{equation*}
+	E = \frac{Q - q}{\varepsilon_0S}
+\end{equation*}
+\begin{equation*}
+	V = -\int E \: dd = -\frac{Q - q}{\varepsilon_0S}d
+\end{equation*}
+\begin{equation*}
+	C = \frac{Q}{V} = \frac{Q}{Q-q}\cdot\frac{\varepsilon_0 S}{d}
+\end{equation*}
+\begin{equation*}
+	\varepsilon_r = \frac{Q}{Q-q} > 1
+\end{equation*}
+
+The final statement is true because $Q > Q-q$. This fraction is called the relative permittivity of the material ($\varepsilon_r$). As $\varepsilon_r > 1$ having a dielectric will increase capacitance. 
+
+This leads to the definition of capacitance:
+\begin{equation*}
+	C = \varepsilon \frac{S}{d}
+\end{equation*}
+
+Where $\varepsilon = \varepsilon_0\varepsilon_r$ (absolute permittivity).
+
+\subsection{Polarisation}
+The electric flux density is caused by both the polarisation of the dielectric and the applied field therefore:
+\begin{equation*}
+	D = \varepsilon_0E + P
+\end{equation*}
+\begin{equation*}
+	\therefore P = D-\varepsilon_0E = \varepsilon_0\varepsilon_rE - \varepsilon_0E = \varepsilon_0E(\varepsilon_r-1)
+\end{equation*}
+Therefore polarisation is related to the permittivity of the dielectric. The polarisation is the total effect of the electric field upon the dielectric. 
+
+\subsubsection{Dipole Moment}
+The moment of a dipole of charge $\pm q$ separated by displacement $\vec{d}$ is $\vec{p}(m) = q\vec{d}$. The polarisation of a material is equal to the sum of all of the dipole moments per unit volume in the material: $\vec{P} = N\vec{p}$.
+
+As this dipole moment is created under the influence of an electric field it is called an induced dipole moment. Dipole moments can also occur without an electric field as a result of the arrangement of atoms within a chemical molecule. This is called the ionic dipole moment. In the absence of an electric field these moments are not aligned and cancel eachother out. An electric field can align these moments creating a net polarisation.
+
+\subsubsection{Microscopic Model of Polarisation}
+As mentioned previously, the probability of an electron being at a point in the electron cloud on the side where positive charge is applied is increased. This slightly separates the electrons from the nucleus, creating a dipole.
+
+This leads to another way of describing the dipole moment and polarisation where $\alpha_e$ is the electronic polarisability, $\vec{E_1}$ is the electric field and $n$ is the number of polarisable atoms per unit volume:
+\begin{equation*}
+	\vec{m}=\alpha_e\vec{E_1}
+\end{equation*}
+\begin{equation*}
+	\vec{P} = n\vec{m}
+\end{equation*}
+
 \section{Electrets}
-Electrets are special dielectrics which (after being polarised by a magnetic field) retain their charge for much longer than the time period over which they are studied. Modern electrets are mostly made using polymers. 
+Electrets are special dielectrics which retain their charge for much longer than the time period over which they are studied. Modern electrets are mostly made using polymers. 
 
 \subsection{Creating An Electret}
 \subsubsection{Thermal Forming Method}
