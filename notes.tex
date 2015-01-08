@@ -11,10 +11,148 @@
 
 \begin{document}
 \maketitle
-\pagebreak
+This document is written primarily to provide revision material when used alongside the accompanying lecture slides. These slides are not publicly available but I hope this can still be useful to people other than students of electronics at Southampton. 
 \tableofcontents
 \pagebreak
 \chapter{Electromagnetism}
+\section{Basics}
+\begin{itemize}
+\item Charge is quantised in units of $e$
+\item Charge is conserved
+\end{itemize}
+
+\subsection{Coulomb's Law}
+\begin{equation*}
+	\vec{F} = k\frac{q_1q_2}{\vec{r}^2}
+\end{equation*}
+
+Where $k$ is the electrostatic constant:
+\begin{equation*}
+	k = \frac{1}{4\pi\varepsilon_0}
+\end{equation*}
+
+This is very similar to Newton's law for gravitation:
+\begin{equation*}
+	\vec{F}=G\frac{m_1m_2}{\vec{r}^2}
+\end{equation*}
+
+The total force on a particle is equal to the sum of all the forces from all other particles. \textit{Make sure you get the vector algebra correct when doing this.}
+
+\section{Electric Fields}
+Electric field is defined as the force per unit charge:
+\begin{equation*}
+	\vec{E} = \frac{\vec{F}}{q} = \frac{Q}{4\pi\varepsilon_0 \vec{r}^2}
+\end{equation*}
+
+The electric field is often drawn as arrows on a diagram (from the perspective of the force upon a small positive test charge).
+
+As with force, the total electric field equals the sum of all electric fields in a system (again, being careful with the vector algebra).
+
+\subsection{Example: Electric Field From a Charged Ring}
+Suppose there is a positively charged ring in the XY-plane, centred about the origin and with an average radius $R$ with a thickness far less than R. Assuming that the charge on the ring is far greater than $e$ (so that charge can be treated as continuous) the electric field at a point P distance $z$ along the Z-axis can be found by the following:
+
+As previously discussed, the total electric field is the sum of all of the fields from all of the charges and so:
+\begin{equation*}
+\vec{E_T} = \int_0^{E_T}\, dE
+\end{equation*}
+Where $dE$ is an infinitesimally small section of the ring. Considering the electric field in the Z direction, $dE$ will be
+\begin{eqnarray*}
+	dE_z = \frac{\delta Q}{4\pi\varepsilon_0(R^2+z^2)}\cdot\frac{z}{\sqrt{R^2+z^2}} = \frac{\delta Qz}{4\pi\varepsilon_0(R^2+z^2)^{\frac{3}{2}}} \\
+	\therefore E_z = \frac{Qz}{4\pi\varepsilon_0(R^2+z^2)^{\frac{3}{2}}}
+\end{eqnarray*}
+
+As point P is defined to be along the axis perpendicular to the ring's centre, the X and Y components of the field must cancel out due to symmetry. Therefore the whole field is:
+\begin{equation*}
+	E = \frac{Qz}{4\pi\varepsilon_0(R^2+z^2)^{\frac{3}{2}}}
+\end{equation*}
+
+\section{Electric Potential}
+\begin{itemize}
+	\item This is a scalar quantity and so is path independent
+	\item Potential is measured relative to the potential somewhere else
+	\item Often measured relative to the potential at $r=\infty$ because $V_\infty=0$
+	\item I find it useful to think of electric potential as the potential energy per unit charge
+\end{itemize}
+\begin{equation*}
+	V = - \int_i^f E(x)\delta x
+\end{equation*}
+
+\subsection{Example: Single Charge}
+The potential at distance $R$ from charge $Q$:
+\begin{equation*}
+	V = -\int_{\infty}^R\frac{Q}{4\pi\varepsilon_0r^2}dr = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{R} - \frac{1}{\infty}\right) = \frac{Q}{4\pi\varepsilon_0R}
+\end{equation*}
+Observe that the maths breaks down when very close to $R=0$. Fortunately real charged particles do have size (although it is incredibly small).
+
+\subsection{Electric Potential Energy}
+\begin{itemize}
+	\item Analogous to electric potential energy
+	\item Scalar - therefore path independent
+	\item $E_p = qV$
+\end{itemize}
+
+\subsection{Equipotential Lines}
+\begin{itemize}
+	\item Equipotential Lines are always perpendicular to field lines
+	\item These are like the height lines on a map.
+\end{itemize}
+
+\subsection{Spherical Conductor}
+Imagine a spherical conductor with charge evenly distributed across it:
+\begin{itemize}
+	\item There is no electric field inside the conductor because of the symmetry of the sphere: the super positions cancel out.
+	\item Therefore inside the sphere the electric potential is constant.
+	\item Newton's shell theorem\footnote{See https://en.wikipedia.org/wiki/Shell\_theorem} also tells us that from outside the shell we can treat the spherical conductor like a particle at the centre of the sphere.
+\end{itemize}
+
+\section{Capacitors}
+\begin{itemize}
+	\item Made of two isolated conductors
+	\item Equal and opposite charges build up on the conductors
+	\item Therefore storing energy
+	\item The charge on the conductors is proportional to the potential between them. The constant of proportionality, $C$, is the capacitance of the system. This is measured in Frauds (F). 
+\end{itemize}
+\begin{equation*}
+	Q = CV
+\end{equation*}
+
+\subsection{Example: Spherical Capacitor}
+Imagine two conducting spheres with average radii $a$ and $b$ where $a < b$. The sphere with radius $a$ is inside the other sphere (aligned to it's centre). Between the spheres is a vacuum. The spheres hold an equal and opposite charge of $Q$.
+
+Considering the electric field in the space between ($a < r < b$) the two spheres:
+\begin{itemize}
+	\item There will be no electric field from the larger sphere as this space lies inside it (see previous section).
+	\item As this space lies outside the smaller sphere, it can be treated as a point charge.
+\end{itemize}
+
+Therefore the electric field in the area between the two conductors ($a < r < b$) is 
+\begin{equation*}
+	E = \frac{Q}{4\pi\varepsilon_0r^2}
+\end{equation*}
+
+One can now find the potential between the two conductors by integrating along the path of the radii:
+\begin{equation*}
+	V = -\int_b^a \frac{Q}{4\pi\varepsilon_0r^2} \: dr = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{a} - \frac{1}{b}\right)
+\end{equation*}
+
+Using this potential we can now find the capacitance using the proportionality of charge and potential:
+\begin{equation*}
+	C = \frac{Q}{V} = \frac{Q}{\frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{a} - \frac{1}{b}\right)} = \frac{4\pi\varepsilon_0ab}{b-a}
+\end{equation*}
+
+\subsection{Energy}
+Electric potential is defined as the energy per charge. Therefore:
+\begin{equation*}
+	U = \int_0^Q V \: dq = \int_0^Q \frac{q}{C} \: dq = \frac{Q^2}{2C} = \frac{CV^2}{2}
+\end{equation*}
+
+\subsection{Ideal Capacitance}
+In circuit theory the ideal law for capacitance is often used. Here is a derivation:
+\begin{eqnarray*}
+	Q = CV \\
+	\frac{dQ}{dt} = C \frac{dV}{dt} \\
+	i = C \frac{dV}{dt}
+\end{eqnarray*}
 
 \chapter{Devices}
 \section{Resistors}
@@ -82,15 +220,245 @@ Using the 'resistivity equation':
 \subsubsection{What does this tell us?}
 In symmetric non-superconductors  $I \propto V$. Materials which obey this are called ohmic conductors.
 
-\section{Power}
+\subsubsection{Mobility}
+Mobility characterises how quickly electrons or holes move through a conductor when an electric field is applied. 
+
+Electron mobility $\mu$ is defined as
+\[\mu = \frac{ne^2\tau}{m} = \frac{\sigma}{ne}\]
+
+Which means it is the conductivity per unit charge.
+
+\subsection{Power}
+Power is defined as the rate of energy transfer:
+\[P_{tr} = \frac{dW}{dt} = \frac{dW}{dq}\frac{dq}{dt} = vi\].
+
+By substituting in from Ohm's Law we can see that:
+\[P_{loss} = i^2R = \frac{v^2}{R}\]
+
+Note that the $v$ in Ohm's Law is the potential across the resistor, not the potential of the resistor relative to an arbitrary ground. This is why very high voltages are used in power lines: $\Delta v << v$ (because $\Delta v$ and $v$ are measured using different reference points) and so this leads to very high efficiency compared to when higher currents and lower potentials are used.
+
+\subsubsection{Heat}
+Following on from the definition of power, the thermal energy released by the resistor in time $t = t_2 - t_1$ can be calculated by the following (thermodynamics states that all of the energy dissipated will eventually become heat):
+\[W=\int_{t_1}^{t_2} p(t) \: dt = \int_{t_1}^{t_2} v(t)i(t) \: dt\]
+
+Of-course, real materials have a limited amount of power which they can dissipate without becoming damaged. For resistors this is called the resistor power rating. Many resistors are typically rated at $1/10$, $1/8$ or $1/4$ Watts. Resistors with higher power ratings than this are called power resistors.
+
+For similar reasons, resistors also have temperature ratings which depend upon the power loads on the resistors.
+
+The resistance from the material will also change with temperature. This is described by the temperature co-efficient of resistance (TCR) which is expressed as the change in resistance (in parts per million) per degree Kelvin. This is not typically linear, instead being parabolic with temperature.
+
+Sometimes resistance can change with potential as well and so there is a voltage rating and coefficient analogous to those for temperature. The voltage rating can be calculated as follows:
+\[Rated Voltage(V)=\sqrt{Rated Power(W) \times Nominal Resistance Value(\Omega)}\]
+
+\subsection{Noise in a Resistor}
+In general thermal noise dominates at high frequencies and current noise at low frequencies.
+\subsubsection{Thermal Noise}
+Thermal noise is evenly distributed across all frequencies and is dependent only on the value of resistance and the resistor's temperature:
+\[S_T = 4kTR\]
+Where $k = 1.3807 \times 10^{-23} JK^{-1}$ (Boltzmann's constant). 
+
+\subsubsection{Current Noise}
+Current noise in a resistor does depend upon the material and the frequency:
+\[S_E = C \, \frac{U^2}{f}\] where $C$ is a constant depending upon the material of the resistor and $U$ is the potential drop across the resistor.
+This is often expressed in decibels:
+\[[NI]_{dB} = 20 \log \left( \frac{u}{U} \times 10^6 \right)\]
+
+\section{Capacitors}
+A capacitor is a device which stores charge. It is made of two conductors separated by an insulator.
+
+The capacitance of a capacitor is defined as the ratio of charge to potential: however capacitance is a constant and is determined by neither charge nor potential.
+\[\frac{Q}{V}\]
+
+Instead the capacitance of a given capacitor depends upon its dimensions and the permittivity of it's dielectric.
+\[C=\varepsilon \varepsilon_0 \frac{S}{d}\]
+
+Where $\varepsilon_0 = 8.85 \times10^{-12} \: Fm^{-1}$ is the permittivity of a vacuum, $S$ is the surface area of the conducting plates and $d$ is their separation.
+
+\subsection{Energy}
+Remember from before that 
+\[V=\frac{dW}{dq}\]
+\[\therefore q=C\frac{dW}{dq}\]
+\[\int_0^Q q \, dq = C \int_0^Q dW\]
+\[\frac{1}{2} \, Q^2 = CW\]
+\[\therefore W=\frac{1}{2}CV^2=\frac{1}{2}QV\]
+
+\subsection{Imperfect Dielectrics and Complex Permittivity}
+\textit{Disclaimer: This section needs improvement (even more than the rest) as I far from fully understand it.}
+
+
+In an ideal dielectric there is no energy loss however in real dielectrics defects and impurities lead to various charge carriers in dielectrics. Under the influence of an electric field, current flows through the dielectrics: causing it to act like a resistor. 
+
+Also, material's polarisation do not respond instantaneously to changes in electric field and so the response of a capacitor greatly depends upon the frequency applied to it. This introduces a phase difference to the response: motivating the use of complex numbers to model this behaviour.
+
+This real behaviour can be modelled by imagining a capacitor where the permittivity is a complex number: $\varepsilon^*$, which is called complex permittivity. Let $Re(\varepsilon^*)=\varepsilon'$ and $Im(\varepsilon^*)=\varepsilon''$. This is equivalent to an ideal capacitor in parallel to an ideal resistor.
+
+To begin this model let the capacitor have a capacitance defined as follows:
+\begin{equation}
+	\label{compPerm}
+	C=\varepsilon^*C_0
+\end{equation}
+
+Note that the impedance of a capacitor with capacitance $C$, supplied with an angular velocity $\omega$ is:
+\begin{equation*}
+	Z=\frac{1}{j\omega C}
+\end{equation*}
+
+Using Ohm's law for impedance:
+\begin{equation*}
+	I(j\omega) = \frac{V(j\omega)}{Z(j\omega)} = V(j\omega)j\omega C = V(j\omega)j\omega\varepsilon^*C_0
+\end{equation*}
+
+In an inverse effect to how complex resistance (impedance) can provide capacitance (or inductance), complex capacitance is resistance. And so the imperfections in the capacitor are represented by an ideal resistor in parallel with the ideal capacitor with:
+\begin{eqnarray*}
+	I_C = \omega \varepsilon'C_0V \\
+	I_R = \omega \varepsilon''C_0V
+\end{eqnarray*} 
+
+Analogous to the effects of inductance:
+\begin{eqnarray*}
+	I = I_R + jI_C = \omega\varepsilon''C_0V+j\omega\varepsilon'C_0V \\
+	= j\omega C_0V(\varepsilon'-j\varepsilon'') \\
+	\therefore \varepsilon^* = \varepsilon' - j\varepsilon''
+\end{eqnarray*}
+
+Finding the same result at the end shows that our assumption in equation \ref{compPerm} was valid. 
+
+This shows that $\varepsilon'$  (the real part) is the permittivity of the ideal capacitor and $\varepsilon''$ (the imaginary part) is the permittivity of the resistance in parallel with the capacitor.
+
+By drawing current and permittivity on Argand diagrams one can show that
+\begin{equation*}
+	\frac{I_R}{I_C} = \frac{\varepsilon''}{\varepsilon'}
+\end{equation*} 
+
+This ratio is called $\tan(\delta)$.
+
+\section{Dielectrics}
+Consider putting an insulating material in the gap between the conductors in a capacitor. In an insulator electrons are bound to atoms and so cannot move through the material with the action of the electric field. However they can move slightly within the atom and so create a tiny dipole aligned against the electric field. Within the core of the material the atoms overlap so this has little effect however this does create a small charge $\pm q$ at the edges where the material boarders with the capacitor's conducting plates. 
+
+Let $\pm Q$ be the charge on the conducting plates, $d$ be the separation of the plates of the capacitor (the whole space is filled with the dielectric) and $E$ be the electric field in the dielectric. $S$ is the surface area of the conducting plates. 
+
+Note that $|Q| > |q|$ because the dielectric is an insulator. Also the surface charge of the dielectric will be opposite to the charge on the contacting plate.
+
+\begin{equation*}
+	E = \frac{Q - q}{\varepsilon_0S}
+\end{equation*}
+\begin{equation*}
+	V = -\int E \: dd = -\frac{Q - q}{\varepsilon_0S}d
+\end{equation*}
+\begin{equation*}
+	C = \frac{Q}{V} = \frac{Q}{Q-q}\cdot\frac{\varepsilon_0 S}{d}
+\end{equation*}
+\begin{equation*}
+	\varepsilon_r = \frac{Q}{Q-q} > 1
+\end{equation*}
+
+The final statement is true because $Q > Q-q$. This fraction is called the relative permittivity of the material ($\varepsilon_r$). As $\varepsilon_r > 1$ having a dielectric will increase capacitance. 
+
+This leads to the definition of capacitance:
+\begin{equation*}
+	C = \varepsilon \frac{S}{d}
+\end{equation*}
+
+Where $\varepsilon = \varepsilon_0\varepsilon_r$ (absolute permittivity).
+
+\subsection{Polarisation}
+The electric flux density is caused by both the polarisation of the dielectric and the applied field therefore:
+\begin{equation*}
+	D = \varepsilon_0E + P
+\end{equation*}
+\begin{equation*}
+	\therefore P = D-\varepsilon_0E = \varepsilon_0\varepsilon_rE - \varepsilon_0E = \varepsilon_0E(\varepsilon_r-1)
+\end{equation*}
+Therefore polarisation is related to the permittivity of the dielectric. The polarisation is the total effect of the electric field upon the dielectric. 
+
+\subsubsection{Dipole Moment}
+The moment of a dipole of charge $\pm q$ separated by displacement $\vec{d}$ is $\vec{p}(m) = q\vec{d}$. The polarisation of a material is equal to the sum of all of the dipole moments per unit volume in the material: $\vec{P} = N\vec{p}$.
+
+As this dipole moment is created under the influence of an electric field it is called an induced dipole moment. Dipole moments can also occur without an electric field as a result of the arrangement of atoms within a chemical molecule. This is called the ionic dipole moment. In the absence of an electric field these moments are not aligned and cancel each other out. An electric field can align these moments creating a net polarisation.
+
+\subsubsection{Microscopic Model of Polarisation}
+As mentioned previously, the probability of an electron being at a point in the electron cloud on the side where positive charge is applied is increased. This slightly separates the electrons from the nucleus, creating a dipole.
+
+This leads to another way of describing the dipole moment and polarisation where $\alpha_e$ is the electronic polarisability, $\vec{E_1}$ is the electric field and $n$ is the number of polarisable atoms per unit volume:
+\begin{equation*}
+	\vec{m}=\alpha_e\vec{E_1}
+\end{equation*}
+\begin{equation*}
+	\vec{P} = n\vec{m}
+\end{equation*}
+
+\section{Electrets}
+Electrets are special dielectrics which retain their charge for much longer than the time period over which they are studied. Modern electrets are mostly made using polymers. 
+
+\subsection{Creating An Electret}
+\subsubsection{Thermal Forming Method}
+When materials are heated it is a lot easier for dipoles to rotate. At high temperatures some materials can become electrets just using electrodes. When the materials cool down the dipoles can no longer easily move and so the charge becomes semi-permanent. 
+
+\subsubsection{Corona Discharge Method}
+This uses a needle with a very high potential to ionise air. The material is connected to ground so that negative charges from the air move towards the material's surface. A wire mesh is used to control the potential at the material's surface. 
+
+\subsubsection{Liquid Contact Method}
+Here a wet electrode with a high potential is used to transfer charge to the grounded material.
+
+\subsubsection{Electron Beam Method}
+An electron gun, focusing magnetic field and vacuum chamber are used like in a CRT display to fire electrons at the material. These electrons will implant at a certain depth. 
+
+\subsection{Methods of Charge Measurement}
+\subsubsection{Capacitive Probe}
+\begin{itemize}
+	\item Popular for measuring surface charge and surface potential
+	\item Non-contact
+	\item Non-destructive
+	\item Uses $C = Q/V$
+	\item If the probe is a parallel plate then the material can be used as the other plate in a parallel plate capacitor
+\end{itemize}
+
+\subsubsection{Vibrating Capacitive Probe}
+This is a capacitive probe that is being vibrated. In this way a lot of measurements can be taken at different distances. This is done because measuring the change of the charge with time (current) at different distances can be easier.
+
+\subsection{Application Example: Condenser Microphone}
+Here a capacitor is created using an electret and an air gap as the dielectric. When the pressure wave (sound) occurs this changes the separation of the plates: changing the capacitance and producing an electric potential. 
+
+\section{Inductors}
+A passive two terminal component which stores energy as part of its magnetic field. Inductors resist changes in current. 
+
+Inductance is defined as the ratio of total flux and current, however it is independent of these variables: depending only upon the geometry of the conductor used to make the inductor. The SI unit for inductance is the Henry (H).
+\begin{equation*}
+	L = \frac{\Phi}{I}
+\end{equation*}
+
+The usage of inductors is described by:
+\begin{equation*}
+	v = L\frac{di}{dt}
+\end{equation*}
+
+The inductance of a coil of wire around a core (with permittivity $\mu$) with cross section area $A$, $n$ turns of wire and length $l$ is:
+\begin{equation*}
+	L = \frac{\mu n^2A}{l}
+\end{equation*}
+
+\subsection{Energy and Power}
+\begin{equation*}
+	P = iv = Li\frac{di}{dt}
+\end{equation*}
+And so to find energy:
+\begin{equation*}
+	\int_0^t Li\frac{di}{dt} \, dt = L\int_0^I i \, di = \frac{1}{2}LI^2
+\end{equation*}
+
 
 \chapter{Oscillations and Waves}
 
 \chapter{Batteries and Fuel Cell}
 
-\chapter{Appencices}
-\section{Distrubution and Licensing}
-This work is distrubuted under Creative Commons Attribution-ShareAlike 4.0
+\chapter{Appendices}
+\section{Distribution and Licensing}
+This work is distributed under Creative Commons Attribution-ShareAlike 4.0
 International (see https://creativecommons.org/by-sa/4.0/).
+
+\section{Acknowledgements}
+My notes on electromagnetism are based on lectures by Professor CH De Groot from Southampton University.
+
+My notes on devices are based on lectures by Professor George Chen from Southampton University.
 
 \end{document}
